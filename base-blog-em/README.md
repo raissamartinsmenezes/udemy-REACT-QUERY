@@ -34,5 +34,15 @@ This app uses the [JSON Placeholder](https://jsonplaceholder.typicode.com/) serv
 
 create react app only sets this node env environment variable to be production. when you actually run a build `npm run build`, otherwise it's development or testing. so basically between create react app and the dev tools, we get it built in that when we're developing we get to see the dev tools, but in production they won't show
 
+### staleTime x cacheTime
+
+**staleTime**: is for re-fetching
+
+**cacheTime**: is for data that might be re-used later, it is backup data to display while fetching 
+
+    - query goes into "cold storage" if there's no active useQuery
+    - cache data expires after cacheTime (default: five minutes) -> "how long it's been since the last active useQuery"
+    - after the cache expires, the data is garbage collected
+
 
 
