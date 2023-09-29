@@ -18,7 +18,7 @@ This app uses the [JSON Placeholder](https://jsonplaceholder.typicode.com/) serv
 
 ### isFetching x isLoading
 
-**isFetching**: the async query function hasn't yet resolved yet
+**isFetching**: the async query function hasn't yet resolved yet (isFetching contains isLoading)
 
 **isLoading**: we are in a fetching state, our query function hasn't resolved yet, but we also have no cached data. we've never made this query before and so we are both fetching and we have no cached data to display
 
@@ -40,9 +40,17 @@ create react app only sets this node env environment variable to be production. 
 
 **cacheTime**: is for data that might be re-used later, it is backup data to display while fetching 
 
-    - query goes into "cold storage" if there's no active useQuery
-    - cache data expires after cacheTime (default: five minutes) -> "how long it's been since the last active useQuery"
-    - after the cache expires, the data is garbage collected
+- query goes into "cold storage" if there's no active useQuery
+- cache data expires after cacheTime (default: five minutes) -> "how long it's been since the last active useQuery"
+- after the cache expires, the data is garbage collected
+
+### prefetching
+
+- adds data to the cache
+- is automatically stale
+- while the data is refetching, react query will be able to hand us the data that's in the cache and we can display that until the refetch has refreshed the data
+- 
+
 
 
 
