@@ -15,6 +15,8 @@ Run `npm start`. The app will be found at [http://localhost:3000]
 This app uses the [JSON Placeholder](https://jsonplaceholder.typicode.com/) server.
 
 ## Study Notes
+- [ ] adicionar os links das docs da documentação
+- [ ] separar os conteúdos sobre o update do react-query 
 
 ### isFetching x isLoading
 
@@ -49,8 +51,14 @@ create react app only sets this node env environment variable to be production. 
 - adds data to the cache
 - is automatically stale
 - while the data is refetching, react query will be able to hand us the data that's in the cache and we can display that until the refetch has refreshed the data
-- 
 
+### mutations
+
+similar to `useQuery` but:
+- returns mutate function
+- doesn't need query key
+- `isLoading` but no `isFetching` because we don't have cached data
+- by default, there's no retries (but this is configurable)
 
 
 
